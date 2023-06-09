@@ -2,7 +2,6 @@
     import Call from "./Call.svelte";
     import RegTable from "./RegTable.svelte";
     import TypeList from "./TypeList.svelte";
-    import "./styles.css";
 </script>
 
 <h1 class="text">
