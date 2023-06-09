@@ -1,0 +1,45 @@
+
+.type {
+    color: teal;
+    font-family: monospace;
+}
+
+.text {
+    color: darkblue;
+    font-family: monospace;
+}
+
+.num {
+    color: magenta;
+    font-family: monospace;
+}
+
+.frame {
+    background-color: white;
+    /* padding: 4px; */
+    margin: 4px;
+    border: 1px solid black;
+    box-shadow: 2px 2px grey;
+}
+
+button {
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: none;
+    background-color: lightskyblue;
+    font-family: monospace;
+    font-weight: 500;
+    font-size: larger;
+    box-shadow: 2px 2px grey;
+}
+
+button:hover {
+    background-color: cadetblue;
+}
+
+button:active {
+    background-color: darkcyan;
+}
