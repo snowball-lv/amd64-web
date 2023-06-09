@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		
+		<link href="./_app/immutable/assets/2.6c450beb.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.1a8a4f0d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.33757140.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.ec32d7fc.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.4b02a203.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.01376ba6.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.742a3172.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.0fe2511d.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+<h1 class="text svelte-dyiw47">amd64 sysv calling convention
+</h1>
+
+<div id="main" class="svelte-dyiw47"><div><table class="frame svelte-mc53ao"><tr><td><table><tr><td style="min-width: 20ch;"><span class="type">char</span></td>
+                    <td><span class="text">size</span>
+                        <span class="num">1</span></td>
+                    <td><span class="text">| align</span>
+                        <span class="num">1</span></td></tr></table></td></tr>
+    
+</table><table class="frame svelte-mc53ao"><tr><td><table><tr><td style="min-width: 20ch;"><span class="type">short</span></td>
+                    <td><span class="text">size</span>
+                        <span class="num">2</span></td>
+                    <td><span class="text">| align</span>
+                        <span class="num">2</span></td></tr></table></td></tr>
+    
+</table><table class="frame svelte-mc53ao"><tr><td><table><tr><td style="min-width: 20ch;"><span class="type">int</span></td>
+                    <td><span class="text">size</span>
+                        <span class="num">4</span></td>
+                    <td><span class="text">| align</span>
+                        <span class="num">4</span></td></tr></table></td></tr>
+    
+</table><table class="frame svelte-mc53ao"><tr><td><table><tr><td style="min-width: 20ch;"><span class="type">long</span></td>
+                    <td><span class="text">size</span>
+                        <span class="num">8</span></td>
+                    <td><span class="text">| align</span>
+                        <span class="num">8</span></td></tr></table></td></tr>
+    
+</table><table class="frame svelte-mc53ao"><tr><td><table><tr><td style="min-width: 20ch;"><span class="type">float</span></td>
+                    <td><span class="text">size</span>
+                        <span class="num">4</span></td>
+                    <td><span class="text">| align</span>
+                        <span class="num">4</span></td></tr></table></td></tr>
+    
+</table><table class="frame svelte-mc53ao"><tr><td><table><tr><td style="min-width: 20ch;"><span class="type">double</span></td>
+                    <td><span class="text">size</span>
+                        <span class="num">8</span></td>
+                    <td><span class="text">| align</span>
+                        <span class="num">8</span></td></tr></table></td></tr>
+    
+</table>
+
+<div style="margin: 4px;"><button>Add Type
+    </button></div></div>
+    <div style="flex-grow: 2; padding-left: 32px;"><div><div class="frame svelte-3fl0lg"><p class="svelte-3fl0lg"><span class="type">void</span>
+        <span class="text">foo(</span>
+        
+        <button>+</button>
+        <span class="text">);</span></p>
+</div></div>
+        <div style="height: 32px;"></div>
+        <div><table class="frame" style="border-spacing: 0px;"><tr><td class="svelte-1hgub3f"><div class="hdr text svelte-1hgub3f" style="min-width: 16ch;">gp regs</div>
+            <br>
+            <div><span class="text">%rdi:</span>
+                </div><div><span class="text">%rsi:</span>
+                </div><div><span class="text">%rdx:</span>
+                </div><div><span class="text">%rcx:</span>
+                </div><div><span class="text">%r8:</span>
+                </div><div><span class="text">%r9:</span>
+                </div></td>
+        <td class="svelte-1hgub3f"><div class="hdr text svelte-1hgub3f" style="min-width: 16ch;">fp regs</div>
+            <br>
+            <div><span class="text">%xmm0:</span>
+                </div><div><span class="text">%xmm1:</span>
+                </div><div><span class="text">%xmm2:</span>
+                </div><div><span class="text">%xmm3:</span>
+                </div><div><span class="text">%xmm4:</span>
+                </div><div><span class="text">%xmm5:</span>
+                </div><div><span class="text">%xmm6:</span>
+                </div><div><span class="text">%xmm7:</span>
+                </div></td>
+        <td class="svelte-1hgub3f"><div class="hdr text svelte-1hgub3f" style="min-width: 16ch;">stack</div>
+            <br></td></tr>
+</table></div></div>
+</div>
+
+
+			
+			<script>
+				{
+					__sveltekit_1g31cq = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.1a8a4f0d.js"),
+						import("./_app/immutable/entry/app.01376ba6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
