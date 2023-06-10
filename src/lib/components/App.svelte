@@ -1,5 +1,6 @@
 <script>
-    import Call from "./Call.svelte";
+    import { PARAMS } from "$lib/stores";
+import Call from "./Call.svelte";
     import RegTable from "./RegTable.svelte";
     import TypeList from "./TypeList.svelte";
 </script>
@@ -19,6 +20,11 @@
             <RegTable />
         </div>
     </div>
+</div>
+<div>
+    {#each $PARAMS as p}
+        <div>{p.name}</div>
+    {/each}
 </div>
 
 <style>

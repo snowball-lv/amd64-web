@@ -1,20 +1,29 @@
 <script>
     import { CType } from "../ctypes";
-    import { ALL_TYPES } from "../stores";
-    import Param from "./Param.svelte";
-
-    /**
-     * @type {CType[]}
-    */
-    let params = [];
+    import { ALL_TYPES, PARAMS } from "../stores";
+    import Dropdown from "./Dropdown.svelte";
 
     function addparam() {
-        params.push($ALL_TYPES[0]);
-        params = params;
+        $PARAMS.push($ALL_TYPES[0])
+        $PARAMS = $PARAMS;
+    }
+
+    function remparam() {
+        $PARAMS.pop();
+        $PARAMS = $PARAMS;
     }
 
     function paramname(i) {
         return "p" + i;
+    }
+
+    function options() {
+        return $ALL_TYPES.map(t => t.name);
+    }
+
+    function onselect(iparam, itype) {
+        $PARAMS[iparam] = $ALL_TYPES.find(t => t.name == itype);
+        $PARAMS = $PARAMS;
     }
 
 </script>
@@ -23,13 +32,14 @@
     <p>
         <span class="type">void</span>
         <span class="text">foo(</span>
-        {#each params as param, i}
-            <div style="display: inline-block;">
-                <Param type={param} name={paramname(i)} />
-            </div>
+        {#each $PARAMS as param, i}
+            <Dropdown values={options()}
+                    on:select={(e) => onselect(i, e.detail)} />
+            <span class="text">{paramname(i)}</span>
             <span class="text">{", "}</span>
         {/each}
         <button on:click={addparam}>+</button>
+        <button on:click={remparam}>-</button>
         <span class="text">);</span>
     </p>
 </div>
