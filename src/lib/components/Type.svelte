@@ -1,7 +1,7 @@
 <script>
     import Field from "./Field.svelte";
-    import { CField, CType } from "./ctypes";
-    import { ALL_TYPES } from "./stores";
+    import { CField, CType } from "../ctypes";
+    import { ALL_TYPES } from "../stores";
 
     /**
      * @type {CType}

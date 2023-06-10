@@ -1,6 +1,6 @@
 <script>
-    import { CField } from "./ctypes";
-    import { ALL_TYPES } from "./stores";
+    import { CField } from "../ctypes";
+    import { ALL_TYPES } from "../stores";
 
     /**
      * @type {CField}

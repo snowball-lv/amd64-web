@@ -1,7 +1,7 @@
 <script>
     import Type from "./Type.svelte";
-    import { CType } from "./ctypes";
-    import { ALL_TYPES } from "./stores";
+    import { CType } from "../ctypes";
+    import { ALL_TYPES } from "../stores";
 
     function addtype() {
         ALL_TYPES.update(t => [...t, new CType("NewType")]);
