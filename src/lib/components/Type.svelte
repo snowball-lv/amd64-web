@@ -17,18 +17,15 @@
     }
 
     function addfield() {
-        let name = "field_" + type.fields.length;
-        type.fields.push(new CField(name, findtype("int")));
-        type = type;
+        type.fields.push(new CField(findtype("int")));
+        $ALL_TYPES = $ALL_TYPES;
     }
 
-    /**
-     * @param idx {number}
-     */
-    function removefield(idx) {
-        console.log("removing " + idx);
-        type.fields.splice(idx, 1);
-        type.fields = type.fields;
+    function remfield() {
+        if (type.fields.length > 0) {
+            type.fields.pop();
+            $ALL_TYPES = $ALL_TYPES;
+        }
     }
 
 </script>
@@ -59,21 +56,16 @@
                 <table>
                     {#each type.fields as field, i}
                         <tr>
-                            <Field {field} />
-                            <td style="width: 100%;"></td>
-                            <td>
-                                <button on:click={() => removefield(i)}>
-                                    X
-                                </button>
-                            </td>
+                            <Field parent={type} {field} name={"f" + i}/>
                         </tr>
                     {/each}
                 </table>
             </td>
         </tr>
         <tr>
-            <td>
-                <button on:click={addfield}>Add Field</button>
+            <td style="text-align: right;">
+                <button on:click={addfield}>+</button>
+                <button on:click={remfield}>-</button>
             </td>
         </tr>
     {/if}

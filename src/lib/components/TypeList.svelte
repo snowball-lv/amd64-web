@@ -1,10 +1,17 @@
 <script>
     import Type from "./Type.svelte";
-    import { CType } from "../ctypes";
+    import { CType, C_TYPES } from "../ctypes";
     import { ALL_TYPES } from "../stores";
 
     function addtype() {
-        ALL_TYPES.update(t => [...t, new CType("NewType")]);
+        $ALL_TYPES.push(new CType("NewType"));
+        $ALL_TYPES = $ALL_TYPES;
+    }
+    function remtype() {
+        if ($ALL_TYPES.length > C_TYPES.length) {
+            $ALL_TYPES.pop();
+            $ALL_TYPES = $ALL_TYPES;
+        }
     }
 </script>
 
@@ -13,8 +20,7 @@
 {/each}
 
 <div style="margin: 4px;">
-    <button on:click={addtype}>
-        Add Type
-    </button>
+    <button on:click={addtype}>+</button>
+    <button on:click={remtype}>-</button>
 </div>
     

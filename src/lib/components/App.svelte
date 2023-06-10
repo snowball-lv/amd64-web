@@ -21,12 +21,6 @@ import Call from "./Call.svelte";
         </div>
     </div>
 </div>
-<div>
-    {#each $PARAMS as p}
-        <div>{p.name}</div>
-    {/each}
-</div>
-
 <style>
     h1 {
         font-size: 3em;

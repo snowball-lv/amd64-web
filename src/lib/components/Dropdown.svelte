@@ -32,7 +32,7 @@
         <span class="type">{values[selected]}</span>
     </div>
     {#if show}
-        <div class="frame" id="list-container">
+        <div class="frame" id="list-container" style="margin-top: 4px;">
             {#each values as v, i}
                 <div class="btn" on:click={() => onoptclick(i)}>
                     <span class="type">{v}</span>
@@ -47,6 +47,7 @@
         display: inline-block;
     }
     .frame {
+        margin: 0px;
         padding: 0px;
     }
     #list-container {
@@ -56,6 +57,8 @@
         background-color: white;
         padding: 4px;
         user-select: none;
+        padding-left: 1ch;
+        padding-right: 1ch;
     }
     .btn:hover {
         background-color: ivory;

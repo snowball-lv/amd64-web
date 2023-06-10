@@ -1,12 +1,14 @@
 <script>
     import { CField } from "../ctypes";
     import { ALL_TYPES } from "../stores";
+    import Dropdown from "./Dropdown.svelte";
 
     /**
      * @type {CField}
      */
     export let field;
-    let fieldtype = field.type.name;
+    export let name;
+    export let parent;
 
     /**
      * @param name {string}
@@ -16,22 +18,29 @@
         return $ALL_TYPES.find(t => t.name === name);
     }
 
-    function onchange() {
-        field.type = findtype(fieldtype);
-        field = field;
+    function options() {
+        return $ALL_TYPES
+            .slice(0, $ALL_TYPES.indexOf(parent))
+            .map(t => t.name);
     }
+
+    function onselect(e) {
+        const tname = e.detail;
+        field.type = findtype(tname);
+        $ALL_TYPES = $ALL_TYPES;
+    }
+
 </script>
 
 <td style="min-width: 2ch;"></td>
 <td style="min-width: 8ch;">
-    <span class="text">offset </span>
+    <span class="text">offset</span>
     <span class="num">{field.offset}</span>
 </td>
 <td>
-    <select bind:value={fieldtype} on:change={onchange}>
-        {#each $ALL_TYPES as t}
-            <option value={t.name}>{t.name}</option>
-        {/each}
-    </select>
+    <Dropdown
+        values={options()}
+        selected={$ALL_TYPES.indexOf(field.type)}
+        on:select={onselect} />
 </td>
-<td>{field.name}</td>
+<td><span class="text" style="margin-left: 1ch;">{name}</span></td>

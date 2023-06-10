@@ -14,11 +14,9 @@ export class CType {
 
 export class CField {
     /** 
-     * @param {string} name
      * @param {CType} type
     */
-    constructor(name, type, offset = 0) {
-        this.name = name;
+    constructor(type, offset = 0) {
         this.type = type;
         this.offset = offset;
     }
