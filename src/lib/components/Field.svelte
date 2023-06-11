@@ -18,11 +18,9 @@
         return $ALL_TYPES.find(t => t.name === name);
     }
 
-    function options() {
-        return $ALL_TYPES
+    $: options = $ALL_TYPES
             .slice(0, $ALL_TYPES.indexOf(parent))
             .map(t => t.name);
-    }
 
     function onselect(e) {
         const tname = e.detail;
@@ -39,7 +37,7 @@
 </td>
 <td>
     <Dropdown
-        values={options()}
+        values={options}
         selected={$ALL_TYPES.indexOf(field.type)}
         on:select={onselect} />
 </td>
