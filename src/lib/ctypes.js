@@ -1,4 +1,12 @@
 
+/**
+ * @param {number} val
+ * @param {number} alignment
+ */
+function alignval(val, alignment) {
+    return Math.floor((val + alignment - 1) / alignment) * alignment;
+}
+
 export class CType {
     /**
      * @param {string} name
@@ -8,7 +16,22 @@ export class CType {
         this.size = size;
         this.align = align;
         this.user = user;
+        /** @type {CField[]} */
         this.fields = [];
+    }
+
+    update() {
+        if (!this.user) return;
+        this.size = 0;
+        this.align = 0;
+        if (this.fields.length === 0) return;
+        let offset = 0;
+        for (let f of this.fields) {
+            f.offset = alignval(offset, f.type.align);
+            offset = f.offset + f.type.size;
+        }
+        this.align = this.fields.reduce((a, f) => Math.max(a, f.type.align), 0);
+        this.size = Math.ceil(offset / this.align) * this.align;
     }
 }
 

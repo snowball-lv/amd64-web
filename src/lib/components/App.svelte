@@ -1,8 +1,15 @@
 <script>
-    import { PARAMS } from "$lib/stores";
-import Call from "./Call.svelte";
+    import { ALL_TYPES } from "$lib/stores";
+    import { onDestroy } from "svelte";
+    import Call from "./Call.svelte";
     import RegTable from "./RegTable.svelte";
     import TypeList from "./TypeList.svelte";
+    
+    onDestroy(ALL_TYPES.subscribe(types => {
+        for (const t of types) {
+            t.update();
+        }
+    }));
 </script>
 
 <h1 class="text">

@@ -2,6 +2,7 @@
     import Type from "./Type.svelte";
     import { CType, C_TYPES } from "../ctypes";
     import { ALL_TYPES, PARAMS } from "../stores";
+    import { onDestroy } from "svelte";
 
     function addtype() {
         const i = $ALL_TYPES.length - C_TYPES.length;
