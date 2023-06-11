@@ -28,15 +28,18 @@
 <svelte:window on:click={onwinclick}/>
 
 <div bind:this={container} style="display: inline-block;">
-    <div class="frame btn" id="val" on:click={onclick}>
+    <button class="frame btn" id="val" on:click={onclick}>
         <span class="type">{values[selected]}</span>
-    </div>
+    </button>
     {#if show}
         <div class="frame" id="list-container" style="margin-top: 4px;">
             {#each values as v, i}
-                <div class="btn" on:click={() => onoptclick(i)}>
+                <button
+                    class="btn"
+                    on:click={() => onoptclick(i)}
+                    style="display: block; box-shadow: none;">
                     <span class="type">{v}</span>
-                </div>
+                </button>
             {/each}
         </div>
     {/if}
@@ -54,6 +57,8 @@
         position: absolute;
     }
     .btn {
+        font-size: inherit;
+        border-radius: 0px;
         background-color: white;
         padding: 4px;
         user-select: none;

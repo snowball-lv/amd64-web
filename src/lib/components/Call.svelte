@@ -13,16 +13,10 @@
         $PARAMS = $PARAMS;
     }
 
-    function paramname(i) {
-        return "p" + i;
-    }
-
-    function options() {
-        return $ALL_TYPES.map(t => t.name);
-    }
+    $: options = $ALL_TYPES.map(t => t.name);
 
     function onselect(iparam, value) {
-        $PARAMS[iparam] = $ALL_TYPES.find(t => t.name == value);
+        $PARAMS[iparam] = $ALL_TYPES.find(t => t.name === value);
         $PARAMS = $PARAMS;
     }
 
@@ -34,9 +28,11 @@
         <span class="text">foo(</span>
         {#each $PARAMS as param, i}
             <div class="param-container">
-                <Dropdown values={options()}
+                <Dropdown
+                    values={options}
+                    selected={options.indexOf(param.name)}
                     on:select={(e) => onselect(i, e.detail)} />
-                <span class="text">{paramname(i)}</span>
+                <span class="text">{"p" + i}</span>
                 <span class="text">{","}</span>
             </div>
         {/each}
@@ -50,7 +46,6 @@
     .frame {
         padding-left: 4ch;
         padding-right: 4ch;
-        font-size: large;
     }
     .param-container {
         display: inline-block;
