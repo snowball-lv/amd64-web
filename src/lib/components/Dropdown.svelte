@@ -35,9 +35,8 @@
         <div class="frame" id="list-container" style="margin-top: 4px;">
             {#each values as v, i}
                 <button
-                    class="btn"
-                    on:click={() => onoptclick(i)}
-                    style="display: block; box-shadow: none;">
+                    class="btn opt"
+                    on:click={() => onoptclick(i)}>
                     <span class="type">{v}</span>
                 </button>
             {/each}
@@ -55,6 +54,12 @@
     }
     #list-container {
         position: absolute;
+    }
+    .opt {
+        display: block;
+        box-shadow: none;
+        width: 100%;
+        text-align: left;
     }
     .btn {
         font-size: inherit;
