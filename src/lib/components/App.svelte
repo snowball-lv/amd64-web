@@ -1,5 +1,5 @@
 <script>
-    import { ALL_TYPES } from "$lib/stores";
+    import { ALL_TYPES } from "../stores";
     import { onDestroy } from "svelte";
     import Call from "./Call.svelte";
     import RegTable from "./RegTable.svelte";
@@ -35,7 +35,7 @@
 </div>
 <style>
     p {
-        font-size: 3em;
+        font-size: 2em;
         color: darkslategrey;
         margin-left: 2ch;
     }

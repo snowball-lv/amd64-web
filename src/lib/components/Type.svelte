@@ -64,7 +64,7 @@
     {/if}
     <tr>
         <td>
-            <span class="text">8 bytes:</span>
+            <span class="text">8-bytes:</span>
         </td>
     </tr>
     <tr>

@@ -4,7 +4,7 @@
     import Dropdown from "./Dropdown.svelte";
 
     function addparam() {
-        $PARAMS.push($ALL_TYPES[0])
+        $PARAMS.push($ALL_TYPES.find(t => t.name === "int"));
         $PARAMS = $PARAMS;
     }
 
@@ -27,17 +27,19 @@
         <span class="type">void</span>
         <span class="text">foo(</span>
         {#each $PARAMS as param, i}
-            <div class="param-container">
+            <span class="param-container">
                 <Dropdown
                     values={options}
                     selected={options.indexOf(param.name)}
                     on:select={(e) => onselect(i, e.detail)} />
                 <span class="text">{"p" + i}</span>
                 <span class="text">{","}</span>
-            </div>
+            </span>
         {/each}
-        <button on:click={addparam}>+</button>
-        <button on:click={remparam}>-</button>
+        <span style="display: inline-block;">
+            <button on:click={addparam}>+</button>
+            <button on:click={remparam}>-</button>
+        </span>
         <span class="text">);</span>
     </p>
 </div>

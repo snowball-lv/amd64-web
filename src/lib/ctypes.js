@@ -3,7 +3,7 @@
  * @param {number} val
  * @param {number} alignment
  */
-function alignval(val, alignment) {
+export function alignval(val, alignment) {
     return Math.floor((val + alignment - 1) / alignment) * alignment;
 }
 
@@ -101,6 +101,27 @@ export class CType {
         this.align = this.fields.reduce((a, f) => Math.max(a, f.type.align), 0);
         this.size = Math.ceil(offset / this.align) * this.align;
         this.classify();
+    }
+
+    /** 
+     * @param {number} idx - index of 8-byte
+     * @param {string} prefix - prefix for field names 
+     */
+    getfields(idx, prefix) {
+        const fields = [];
+        for (let i = 0; i < this.fields.length; i++) {
+            const f = this.fields[i];
+            if (f.offset + f.type.size <= idx * 8) continue;
+            if (f.offset >= (idx + 1) * 8) break;
+            const name = prefix + "f" + i;
+            if (!f.type.user) {
+                fields.push(name);
+            }
+            else {
+                fields.push(...f.type.getfields(idx, name + "."));
+            }
+        }
+        return fields;
     }
 }
 
