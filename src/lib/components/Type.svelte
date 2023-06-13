@@ -33,16 +33,15 @@
 <table class="frame">
     <tr>
         <td>
-            <table>
+            <table style="width: 100%;">
                 <tr>
-                    <td style="min-width: 20ch;">
+                    <td>
                         <span class="type">{type.name}</span>
                     </td>
-                    <td>
+                    <td></td>
+                    <td style="text-align: right;">
                         <span class="text">size</span>
                         <span class="num">{type.size}</span>
-                    </td>
-                    <td>
                         <span class="text">| align</span>
                         <span class="num">{type.align}</span>
                     </td>
@@ -96,5 +95,6 @@
 <style>
     .frame {
         padding: 4px;
+        min-width: 40ch;
     }
 </style>

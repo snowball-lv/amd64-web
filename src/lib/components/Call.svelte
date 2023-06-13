@@ -46,6 +46,7 @@
     .frame {
         padding-left: 4ch;
         padding-right: 4ch;
+        max-width: 80ch;
     }
     .param-container {
         display: inline-block;

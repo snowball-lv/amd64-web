@@ -4,6 +4,7 @@
     import Call from "./Call.svelte";
     import RegTable from "./RegTable.svelte";
     import TypeList from "./TypeList.svelte";
+    import Notes from "./Notes.svelte";
     
     onDestroy(ALL_TYPES.subscribe(types => {
         for (const t of types) {
@@ -12,9 +13,9 @@
     }));
 </script>
 
-<h1 class="text">
+<p class="text">
     amd64 sysv calling convention
-</h1>
+</p>
 
 <div id="main">
     <div><TypeList /></div>
@@ -26,10 +27,14 @@
         <div>
             <RegTable />
         </div>
+        <div style="height: 32px;"></div>
+        <div>
+            <Notes />
+        </div>
     </div>
 </div>
 <style>
-    h1 {
+    p {
         font-size: 3em;
         color: darkslategrey;
         margin-left: 2ch;
