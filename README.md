@@ -1,38 +1,10 @@
-# create-svelte
+# amd64 function call inspector
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+An interactive inspector for the `amd64` sysv calling convetion.
 
-## Creating a project
+Made as an excercise to get a better grip on it myself (and as a webdev exercise!).
+If you sometimes struggle with picturing how and in which resgisters your arguments get passed to functions it might be worth playing around with it.
 
-If you're seeing this, you've probably already done this step. Congrats!
+*NB, it's incomplete, rarely used types like `long double` aren't implemetned.*
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Check it out live https://snowball-lv.github.io/amd64-web

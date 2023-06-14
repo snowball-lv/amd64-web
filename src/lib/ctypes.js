@@ -95,6 +95,7 @@ export class CType {
         }
         let offset = 0;
         for (let f of this.fields) {
+            if (f.type.size === 0) continue;
             f.offset = alignval(offset, f.type.align);
             offset = f.offset + f.type.size;
         }
